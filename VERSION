@@ -1,0 +1,5 @@
+commit d0fb2f6050d86e809c04b93f52dab1800542633f
+Author: Emmett Lalish <elalish@google.com>
+Date:   Thu Dec 17 17:07:23 2020 -0800
+
+    allow hashes appended to quickLook (#1775)
