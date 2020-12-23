@@ -108,7 +108,7 @@
   <a class="darken" href="#customButton" onclick="sidebarClick()">Custom Button</a>
 </h4>
 <h4 class="subcategory-header" id="container-transparentBackground-sidebar">
-  <a class="darken" href="#transparentBackground" onclick="sidebarClick()">Transparent Background</a>
+  <a class="darken" href="#transparentBackground" onclick="sidebarClick()">Título 6</a>
 </h4>
   </div>
 </div>
@@ -661,8 +661,8 @@
       <div class="content">
         <div class="wrapper">
           <div class="heading">
-            <h2 class="demo-title">Augmented Reality</h2>
-            <h4>This demonstrates several augmented reality modes, including <code>webxr</code>, <code>scene-viewer</code>, <code>quick-look</code> &amp; the accompanying attributes, <code>ios-src</code>, <code>quick-look-browsers</code>.</h4>
+            <h2 class="demo-title">Título 2</h2>
+            <h4>Sub título 2</h4>
           </div>
           <example-snippet stamp-to="ar" highlight-as="html">
             <template>
@@ -711,8 +711,8 @@
       <div class="content">
         <div class="wrapper">
           <div class="heading">
-            <h2 class="demo-title">Scene Viewer</h2>
-            <h4>Here the Scene Viewer app is given priority, to make it easier to compare with the default WebXR, above.</h4>
+            <h2 class="demo-title">Título 3</h2>
+            <h4>Subtítulo 3</h4>
           </div>
           <example-snippet stamp-to="sceneViewer" highlight-as="html">
             <template>
@@ -790,8 +790,8 @@
       <div class="content">
         <div class="wrapper">
           <div class="heading">
-            <h2 class="demo-title">Placing on a Wall</h2>
-            <h4>This demonstrates the <code>ar-placement</code> attribute, which defaults to "floor", but using "wall" gives a different AR placement experience.</h4>
+            <h2 class="demo-title">Título 4</h2>
+            <h4>Subtítulo 4</h4>
           </div>
           <example-snippet stamp-to="wall" highlight-as="html">
             <template>
@@ -813,28 +813,27 @@
             </div>
       <div class="content">
         <div class="wrapper">
-          <h4 id="intro"><span class="font-medium">Using Slots In &lt;model-viewer&gt;. </span>This page demonstrates how you can change parts of &lt;model-viewer&gt; using web component slots.</h4>
           <div class="heading">
-            <h2 class="demo-title">Custom AR Button</h2>
+            
+            
+            <h2 class="demo-title">Título 5</h2>
             <h4></h4>
           </div>
           <example-snippet stamp-to="customButton" highlight-as="html">
             <template>
 <model-viewer ar="" camera-controls="" ios-src="assets/Astronaut.usdz" src="../../shared-assets/models/Astronaut.glb" alt="A 3D model of an astronaut">
   <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-      👋 Activate AR
-  </button>
+Nuevo botón para activar AR  </button>
 </model-viewer>
             </template>
           <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">ar</span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">ios-src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>assets/Astronaut.usdz<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../shared-assets/models/Astronaut.glb<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A 3D model of an astronaut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ar-button<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span> <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span> <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span> <span class="token property">right</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span> </span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      👋 Activate AR
+Nuevo botón para activar AR
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span></code></pre></example-snippet>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wimodel-viewer</span><span class="token punctuation">&gt;</span></span></code></pre></example-snippet>
   
           <p>
-              Since this slot will only appear on an AR enabled device screenshots are provided below. They compare the &lt;model-viewer&gt; default button in the bottom right and a custom button ("👋 Activate AR") in the top right of the viewport, with a custom style.
-          </p>
+Sub título 5          </p>
   
           <img class="eg-image" src="../../assets/eg-default-ar-button.jpg" alt="Image displaying the default <model-viewer> button of a box with slits cut out in the lower-right, next to the example astronaut model.">
           <img class="eg-image" src="../../assets/eg-custom-ar-button.jpg" alt="Image displaying <model-viewer> with a custom button reading '👋 Activate AR'.">
@@ -873,24 +872,29 @@
     <div class="footer">
       <ul>
         <li class="attribution">
-          <a href="https://poly.google.com/view/dLHpzNdygsg">Astronaut</a> by <a href="https://poly.google.com/user/4aEd8rQgKu2">Poly</a>,
-          licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a>.
+Agradecimientos.
+          
         </li>
         <li class="attribution">
-          Chair, Mixer, GeoPlanter, ToyTrain, Canoe ©Copyright 2020 <a href="https://www.shopify.com/">Shopify Inc.</a>,
-          licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
+         
+          
+          
+          
         </li>
         <li class="attribution">
-          <a href="https://kaboomlaser.com/products/test">Laser Tree</a> by <a href="https://kaboomlaser.com/">Kaboomlaser</a>,
-          licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.
+
+        
+        
         </li>
       </ul>
 
-      <div style="margin-top:24px;" class="copyright">©Copyright 2018-2020 Google Inc. Licensed under the Apache License 2.0.</div>
+      <div style="margin-top:24px;" class="copyright">©Copyright 2020. </div>
       <div id="footer-links">
 <div>
-  <a href="https://github.com/google/model-viewer">Github</a> ∙ <a href="https://model-viewer.glitch.me/">Glitch</a> ∙ <a href="https://github.com/google/model-viewer/issues">Bug report</a> ∙ <a href="https://policies.google.com/privacy">Privacy</a>
-</div></div>
+
+        
+        
+        </div></div>
     </div>
   </div>
 </div>
@@ -908,6 +912,13 @@
   <script nomodule="" src="../built/dependencies-legacy.js">
   </script>
 
+  
+  
+  
+  
+  
+  
+  
   <script type="module"
       src="https://unpkg.com/@google/model-viewer@v1.1.0/dist/model-viewer.js">
   </script>
