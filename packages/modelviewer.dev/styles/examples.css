@@ -352,7 +352,7 @@ model-viewer:focus {
   display: grid;
   position: relative;
   background: white;
-  grid-template-columns: 5% 45%;
+  grid-template-columns: 25% 75%;
   grid-template-areas: "content demo";
 }
 .sample {
