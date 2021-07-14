@@ -13,8 +13,16 @@
  * limitations under the License.
  */
 
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Yomogi:400,500');
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
+
+
+
+
 
 :root {
   --color-red: #ff5252;
@@ -109,7 +117,7 @@
 /* TODO make black opacity to go behind sidebar on device */
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Yomogi', sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: white;
