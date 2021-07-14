@@ -79,7 +79,6 @@
   position: fixed;
   top: 0;
   overflow: hidden;
-  margin-left: var();
   white-space: nowrap;
   font-size: .8em;
   z-index: 1008;
