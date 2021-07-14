@@ -121,7 +121,7 @@
 /* TODO make black opacity to go behind sidebar on device */
 
 body {
-  font-family: 'Chewy', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: white;
@@ -305,6 +305,7 @@ h3 {
   margin-bottom: .12em;
 }
 h4 {
+  font-family: 'Rubik', sans-serif;
   font-size: 1.2em;
   line-height: 1.4em;
   margin-top: .1em;
@@ -778,6 +779,7 @@ paper-button {
   h2 {
     font-size: 1.56em;
     line-height: 1.36em;
+    
   }
   h3 {
     font-size: 1.2em;
