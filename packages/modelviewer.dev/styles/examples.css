@@ -43,7 +43,6 @@
   margin: 0;
   padding: 0;
   width: 300px;
-  margin-left: var(--neg-sidebar-width);
   background-color: #f6f6f6;
   position: fixed;
   top: 0;
@@ -729,7 +728,6 @@ paper-button {
   }
 
   .examples-container {
-    margin-left: 0px;
     margin-right: 0px;
   }
 
