@@ -286,6 +286,7 @@ h1, h2, h3, h4 {
 }
 h1 {
   /* font-weight: 500; */
+  color: yellow;
   white-space: nowrap;
   font-size: 1.92em;
   line-height: 1.24em;
