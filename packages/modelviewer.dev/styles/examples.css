@@ -396,7 +396,7 @@ model-viewer:focus {
   padding: var(--demo-title-padding);
 }
 .demo-title:before {
-  background: #222;
+  background: white;
   height: 2px;
   width: 40px;
   content: "";
