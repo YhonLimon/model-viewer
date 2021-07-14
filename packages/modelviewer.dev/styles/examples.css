@@ -79,7 +79,7 @@
   position: fixed;
   top: 0;
   overflow: hidden;
-  margin-left: var(--sidebar-width);
+  margin-left: var();
   white-space: nowrap;
   font-size: .8em;
   z-index: 1008;
