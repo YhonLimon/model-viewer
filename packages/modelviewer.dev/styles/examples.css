@@ -58,7 +58,7 @@
 
 .outer-content {
   margin-left: var(--sidebar-width);
-  max-width: min(100%, 1100px);
+  max-width: min(60%, 1100px);
   transition-property: margin-left;
   transition: var(--sidebar-speed);
   transition-timing-function: linear;
