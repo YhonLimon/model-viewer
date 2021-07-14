@@ -14,12 +14,16 @@
  */
 
 
+@import url('https://fonts.googleapis.com/css?family=Delius:400,500');
+@import url('https://fonts.googleapis.com/css?family=Chewy:400,500');
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One:400,500');
+@import url('https://fonts.googleapis.com/css?family=Gaegu:400,500');
 
 
+@import url('https://fonts.googleapis.com/css?family=Schoolbell:400,500');
 @import url('https://fonts.googleapis.com/css?family=Yomogi:400,500');
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
-
 
 
 
@@ -117,7 +121,7 @@
 /* TODO make black opacity to go behind sidebar on device */
 
 body {
-  font-family: 'Yomogi', sans-serif;
+  font-family: 'Rammetto+One', sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: white;
@@ -492,7 +496,7 @@ code {
   grid-area: content;
   position: relative;
   padding-top: 20px;
-  background-color: #202b3d;
+  background-color: #1d293a;
 }
 
 .wrapper {
