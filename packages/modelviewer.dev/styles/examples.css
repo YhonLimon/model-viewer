@@ -294,12 +294,17 @@ h1 {
   margin-top: 0;
 }
 h2 {
+ 
+    font-family: 'Delius', sans-serif;
+
   font-size: 1.72em;
   line-height: 1.32em;
   margin-top: .12em;
   margin-bottom: .12em;
 }
 h3 {
+    font-family: 'Delius', sans-serif;
+
   font-size: 1.4em;
   line-height: 1.34em;
   margin-top: .12em;
@@ -359,6 +364,7 @@ model-viewer:focus {
 }
 
 .sample {
+  font-family: 'Delius', sans-serif;
   display: grid;
   position: relative;
   background: white;
