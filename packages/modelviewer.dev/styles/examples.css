@@ -31,35 +31,46 @@
   --icon-size: 28px;
   --header-height: 72px;
 
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  --toggle-visibility: hidden;
+  --og-sidebar-width: 300px;
+  --neg-sidebar-width: 0px;
+  --sidebar-width: 300px;
+  --sidebar-speed: .15s;
+  --border-style-dark: 1px solid rgba(0,0,0,.5);
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  margin-left: var(--neg-sidebar-width);
+  background-color: #f6f6f6;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid #BDBDBD;
+  transition-property: margin-left;
+  transition: var(--sidebar-speed);
+  transition-timing-function: linear;
+  z-index: 1010;
+}
+
+.outer-content {
+  margin-left: var(--sidebar-width);
+  max-width: min(60%, 1100px);
+  transition-property: margin-left;
+  transition: var(--sidebar-speed);
+  transition-timing-function: linear;
+}
+
+.examples-container {
+  margin-left: var(--sidebar-width);
+  transition-property: margin-left;
+  transition: var(--sidebar-speed);
+  transition-timing-function: linear;
+}
+
 .header {
   background-image: linear-gradient(to right, #f6f6f6, rgba(255, 255, 255, 0.9));
   padding: 10px 20px 10px 40px;
@@ -73,13 +84,13 @@
 }
 
 .exampleHeader {
-  margin-left: var(--sidebar-width);
   background-color: rgba(246, 246, 246, 0.9);
   padding: 10px 20px 10px 40px;
   width: 100%;
   position: fixed;
   top: 0;
   overflow: hidden;
+  margin-left: var(--sidebar-width);
   white-space: nowrap;
   font-size: .8em;
   z-index: 1008;
@@ -360,19 +371,7 @@ model-viewer:focus {
   box-sizing: border-box;
 }
 
-.background-demo {
-  grid-area: demo;
-  position: sticky;
-  top: 0;
-  height: 90vh;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  border: 0px solid #555;
-  box-sizing: border-box;
-}
-
-.examples-container > .sample > .demo {
+.sample > .demo {
   height: 100vh;
 }
 
@@ -749,27 +748,15 @@ paper-button {
     margin-left: 0;
     visibility: visible;
   }
-
-  .background-demo {
-    grid-area: demo;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    border: 0px solid #555;
-    box-sizing: border-box;
-  }
   
   .examples-container > .sample > #demo-container-1 {
     margin-top: 75px;
     padding-top: 0px;
   }
   
-  .examples-container > .sample > .demo {
+  .sample > .demo {
     top: 0;
-    height: 90vh;
+    height: 150vw;
   }
 
   body {
@@ -836,7 +823,6 @@ paper-button {
   }
   .demo {
     position: relative;
-    height: 76vh;
     flex-direction: column-reverse;
     background-color: #455A64;
   }
