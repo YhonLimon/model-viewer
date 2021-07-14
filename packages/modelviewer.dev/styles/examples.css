@@ -535,6 +535,7 @@ code {
 }
 .heading {
   max-width: 760px;
+  text-align: justify;
 }
 
 .modal {
