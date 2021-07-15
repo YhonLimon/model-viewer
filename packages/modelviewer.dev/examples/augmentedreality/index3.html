@@ -6,6 +6,22 @@
   <link type="text/css" href="../../styles/examples.css" rel="stylesheet">
   <link type="text/css" href="../../styles/docs.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="../../assets/favicon3.png">
+  
+  
+  
+  
+      <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer=""></script>
+  
+  
+  
+  
+  
+  
 
   <!-- The following libraries and polyfills are recommended to maximize browser support -->
 
@@ -119,14 +135,7 @@
   
   <div class="examples-container">
      
-    <span> <h2> </h2>  </span>
-        <span><audio controls="" autoplay="" loop="" id="sound">
-                <source 
-        src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2F7d7e8236-5fa5-4809-ab74-eb6bf2bef1c6_Penguin_Emperor_Unisex_Adult.mp3?v=1589840629281" 
-                        type="audio/mpeg">
-                <source 
-        src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2F7d7e8236-5fa5-4809-ab74-eb6bf2bef1c6_Penguin_Emperor_Unisex_Adult.ogg?v=1589840682076" 
-                        type="audio/ogg"></audio></span>
+   
     
     
     <div class="sample">
@@ -858,24 +867,14 @@ The following libraries and polyfills are recommended to maximize browser suppor
   
                                                            
                                                            
-        <script>
+
+          
+            <script>
         window.addEventListener("load", () => {
           Sync("#model-viewer", "#sound");
         });
       </script>
-          
-      
-   <!--  </div>
-        <div id="timesteps">
-          <button onclick="jumpTo(0">Pose 1 </button>
-          <button onclick="jumpTo(5)">Pose 2</button>
-          <button onclick="jumpTo(10)">Pose 3 </button>
-          <button onclick="jumpTo(15)">Pose 4</button>
-          <button onclick="jumpTo(20)">Pose 5 </button>
-        </div>
-  
-   
-  -->
+
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"> </script> <!-- Loads <model-viewer> for old browsers like IE11: --> <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"> </script>
 
                                                    
