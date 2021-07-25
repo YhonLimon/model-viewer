@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta name="description" content="Planetas Gaseosos del Sistema Solar">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" href="../../styles/examples.css" rel="stylesheet">
-  <link type="text/css" href="../../styles/docs.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="../../assets/favicon1.png">
+  <link type="text/css" href="/packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
+  <link type="text/css" href="/packages/modelviewer.dev./styles/docs.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="/packages/modelviewer.dev/assets/favicon1.png">
 
   <!-- The following libraries and polyfills are recommended to maximize browser support -->
 
@@ -50,8 +50,8 @@
     <div class="sample">
       <div id="webXR" class="demo">
 <model-viewer 
-              src="../../assets/ShopifyModels/Jupiter.glb" 
-              poster="../../assets/ShopifyModels/Jupiter.png" 
+              src="/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.glb" 
+              poster="/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.png" 
               shadow-intensity="1" 
               ar=""  
               camera-controls="" 
@@ -78,20 +78,20 @@
   </button>
 
   <div id="ar-prompt">
-    <img src="../../assets/hand.png">
+    <img src="/packages/modelviewer.dev/assets/hand.png">
   </div>
 
   <div class="slider">
     <div class="slides">
-      <button class="slide" onclick="switchSrc(this, 'Jupiter')" style="background-image: url('../../assets/ShopifyModels/Jupiter.png');">
+      <button class="slide" onclick="switchSrc(this, 'Jupiter')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.png');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Saturno')" style="background-image: url('../../assets/ShopifyModels/Saturno.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Saturno')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Saturno.png');">
 
-      </button><button class="slide selected" onclick="switchSrc(this, 'Urano')" style="background-image: url('../../assets/ShopifyModels/Urano.png');">
+      </button><button class="slide selected" onclick="switchSrc(this, 'Urano')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Urano.png');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'Neptuno')" style="background-image: url('../../assets/ShopifyModels/Neptuno.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Neptuno')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Neptuno.png');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'Juntos')" style="background-image: url('../../assets/ShopifyModels/Juntos.png');">    
+      </button><button class="slide" onclick="switchSrc(this, 'Juntos')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Juntos.png');">    
     </button></div>
   </div>
 </model-er>
@@ -100,7 +100,7 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "../../assets/ShopifyModels/" + name;
+    const base = "/packages/modelviewer.dev/assets/ShopifyModels/" + name;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.png';
     const slides = document.querySelectorAll(".slide");
@@ -127,7 +127,7 @@
   }
 
   #ar-button {
-    background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
@@ -290,8 +290,8 @@ The following libraries and polyfills are recommended to maximize browser suppor
             
             <template>
 <model-viewer 
-              src="../../assets/ShopifyModels/Jupiter.glb" 
-              poster="../../assets/ShopifyModels/Jupiter.png" 
+              src="/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.glb" 
+              poster="/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.png" 
               shadow-intensity="1" 
               ar=""  
               camera-controls="" 
@@ -312,20 +312,20 @@ The following libraries and polyfills are recommended to maximize browser suppor
   </button>
 
   <div id="ar-prompt">
-    <img src="../../assets/hand.png">
+    <img src="/packages/modelviewer.dev/assets/hand.png">
   </div>
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Jupiter')" style="background-image: url('../../assets/ShopifyModels/Jupier.png');">
+      <button class="slide selected" onclick="switchSrc(this, 'Jupiter')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Jupier.png');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Saturno')" style="background-image: url('../../assets/ShopifyModels/Saturno.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Saturno')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Saturno.png');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Urano')" style="background-image: url('../../assets/ShopifyModels/Urano.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Urano')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Urano.png');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'Neptuno')" style="background-image: url('../../assets/ShopifyModels/Neptuno.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Neptuno')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Neptuno.png');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'Juntos')" style="background-image: url('../../assets/ShopifyModels/Juntos.png');">    
+      </button><button class="slide" onclick="switchSrc(this, 'Juntos')" style="background-image: url('/packages/modelviewer.dev/assets/ShopifyModels/Juntos.png');">    
     </button></div>
   </div>
 </model-viewer>
@@ -350,7 +350,7 @@ The following libraries and polyfills are recommended to maximize browser suppor
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "../../assets/ShopifyModels/" + name;
+    const base = "/packages/modelviewer.dev/assets/ShopifyModels/" + name;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.png';
     const slides = document.querySelectorAll(".slide");
@@ -377,7 +377,7 @@ The following libraries and polyfills are recommended to maximize browser suppor
   }
 
   #ar-button {
-    background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
@@ -480,26 +480,26 @@ The following libraries and polyfills are recommended to maximize browser suppor
 
 </style>
             </template>
-          <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../assets/ShopifyModels/Jupiter.glb<span class="token punctuation">"</span></span> <span class="token attr-name">poster</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../assets/ShopifyModels/Jupier.png<span class="token punctuation">"</span></span> <span class="token attr-name">shadow-intensity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">ar</span> <span class="token attr-name"></span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fixed<span class="token punctuation">"</span></span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A 3D model carousel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.glb<span class="token punctuation">"</span></span> <span class="token attr-name">poster</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/packages/modelviewer.dev/assets/ShopifyModels/Jupier.png<span class="token punctuation">"</span></span> <span class="token attr-name">shadow-intensity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">ar</span> <span class="token attr-name"></span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fixed<span class="token punctuation">"</span></span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A 3D model carousel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ar-button<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ar-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     Ver al planeta en tu espacio
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ar-prompt<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../assets/hand.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/packages/modelviewer.dev/assets/hand.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slides<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide selected<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Jupiter<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/ShopifyModels/Jupiter.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Saturno<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/ShopifyModels/Saturno.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide selected<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Jupiter<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/packages/modelviewer.dev/assets/ShopifyModels/Jupiter.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Saturno<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/packages/modelviewer.dev/assets/ShopifyModels/Saturno.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Urano<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/ShopifyModels/Urano.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Urano<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/packages/modelviewer.dev/assets/ShopifyModels/Urano.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
       
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Neptuno<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/ShopifyModels/Neptuno.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Neptuno<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/packages/modelviewer.dev/assets/ShopifyModels/Neptuno.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
       
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Juntos<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../assets/ShopifyModels/Juntos.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>    
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slide<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switchSrc(this, <span class="token punctuation">'</span>Juntos<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/packages/modelviewer.dev/assets/ShopifyModels/Juntos.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>    
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span>
@@ -508,7 +508,7 @@ The following libraries and polyfills are recommended to maximize browser suppor
   <span class="token keyword">const</span> modelViewer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"model-viewer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   window<span class="token punctuation">.</span><span class="token function-variable function">switchSrc</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> base <span class="token operator">=</span> <span class="token string">"../../assets/ShopifyModels/"</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> base <span class="token operator">=</span> <span class="token string">"/packages/modelviewer.dev/assets/ShopifyModels/"</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
     modelViewer<span class="token punctuation">.</span>src <span class="token operator">=</span> base <span class="token operator">+</span> <span class="token string">'.glb'</span><span class="token punctuation">;</span>
     modelViewer<span class="token punctuation">.</span>poster <span class="token operator">=</span> base <span class="token operator">+</span> <span class="token string">'.png'</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> slides <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".slide"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -535,7 +535,7 @@ The following libraries and polyfills are recommended to maximize browser suppor
   <span class="token punctuation">}</span>
 
   <span class="token selector">#ar-button</span> <span class="token punctuation">{</span>
-    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../../assets/ic_view_in_ar_new_googblue_48dp.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
     <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
     <span class="token property">background-size</span><span class="token punctuation">:</span> 20px 20px<span class="token punctuation">;</span>
     <span class="token property">background-position</span><span class="token punctuation">:</span> 12px 50%<span class="token punctuation">;</span>
@@ -730,7 +730,7 @@ The following libraries and polyfills are recommended to maximize browser suppor
   </div>
 </div>
 
-  <script type="module" src="../../examples/built/docs-and-examples.js">
+  <script type="module" src="/packages/modelviewer.dev/examples/built/docs-and-examples.js">
   </script>
   <script type="module">
     (() => { init('examples-augmentedreality'); })();
@@ -738,9 +738,9 @@ The following libraries and polyfills are recommended to maximize browser suppor
   </script>
 
   <!-- Documentation-specific dependencies: -->
-  <script type="module" src="../built/dependencies.js">
+  <script type="module" src="/packages/modelviewer.dev/built/dependencies.js">
   </script>
-  <script nomodule="" src="../built/dependencies-legacy.js">
+  <script nomodule="" src="/packages/modelviewer.dev/built/dependencies-legacy.js">
   </script>
 
   
