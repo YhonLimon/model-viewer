@@ -3,9 +3,9 @@
   <meta charset="utf-8"> 
   <meta name="description" content="El Sol">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" href="../../styles/examples.css" rel="stylesheet">
-  <link type="text/css" href="../../styles/docs.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="../../assets/favicon1.png">
+  <link type="text/css" href="packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
+  <link type="text/css" href="packages/modelviewer.dev/styles/docs.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="packages/modelviewer.dev/assets/favicon1.png">
 
   <!-- The following libraries and polyfills are recommended to maximize browser support -->
 
@@ -50,8 +50,8 @@
     <div class="sample">
       <div id="webXR" class="demo">
 <model-viewer 
-              src="../../assets/ShopifyModels/Sol.glb" 
-              poster="../../assets/ShopifyModels/Sol.png" 
+              src="packages/modelviewer.dev/assets/ShopifyModels/Sol.glb" 
+              poster="packages/modelviewer.dev/assets/ShopifyModels/Sol.png" 
               shadow-intensity="1" 
               autoplay
               ar=""  
@@ -80,7 +80,7 @@
   </button>
 
   <div id="ar-prompt">
-    <img src="../../assets/hand.png">
+    <img src="packages/modelviewer.dev/assets/hand.png">
   </div>
 
   <div class="slider">
@@ -99,7 +99,7 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "../../assets/ShopifyModels/" + name;
+    const base = "packages/modelviewer.dev/assets/ShopifyModels/" + name;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.png';
     const slides = document.querySelectorAll(".slide");
@@ -126,7 +126,7 @@
   }
 
   #ar-button {
-    background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-image: url(packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
