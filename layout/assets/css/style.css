@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 15px;
-  color: #4e4039;
+  color: #fbdc5f;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -342,7 +342,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 #hero h2 {
-  color: #a08f86;
+  color: #ffffff;
   margin: 15px 0 0 0;
   font-size: 24px;
 }
