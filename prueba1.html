@@ -1,0 +1,187 @@
+<head>
+    <title>&lt;model-viewer&gt; example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="demo-styles.css">
+
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer=""></script>
+  
+
+  </head>
+
+
+<body>
+    <script>
+      function Sync(selector, audioSelector) {
+        var modelViewer = document.querySelector(selector);
+        var sound = document.querySelector(audioSelector);
+        var playRequest = document.querySelector("#overlay");
+
+        sound.addEventListener("timeupdate", () => {
+          modelViewer.currentTime = sound.currentTime;
+          console.log("modelViewer time: " + modelViewer.currentTime);
+        });
+
+        sound.addEventListener("pause", () => {
+          modelViewer.pause();
+        });
+
+        sound.addEventListener("play", () => {
+          modelViewer.play();
+
+          playRequest.classList.add("hide");
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState !== "visible") {
+            sound.pause();
+          }
+        });
+
+        var promise = sound.play();
+        if (promise !== undefined) {
+          promise
+            .then(_ => {
+              console.log("Autoplay has worked");
+              playRequest.classList.add("hide");
+            })
+            .catch(error => {
+              // Show a "Play" button so that user can start playback.
+              console.log("Autoplay has not worked");
+
+              // show the modal dialogue to play this
+              playRequest.classList.remove("hide");
+            });
+        }
+
+        // this is needed because modelViewer.currentTime does not update when paused
+        // https://github.com/google/model-viewer/issues/1113
+        function enforceTime() {
+          if (modelViewer === undefined)
+            modelViewer = document.querySelector(selector);
+
+          if (sound.paused) modelViewer.currentTime = sound.currentTime;
+
+          // need to enforce play
+          if (modelViewer.paused && typeof modelViewer.play === "function")
+            modelViewer.play();
+
+          requestAnimationFrame(enforceTime);
+        }
+
+        requestAnimationFrame(enforceTime);
+      }
+
+      function playNow() {
+        var playRequest = document.querySelector("#overlay");
+        playRequest.classList.add("hide");
+
+        var sound = document.querySelector("#sound");
+        sound.play();
+      }
+
+      function jumpTo(time) {
+        var sound = document.querySelector("#sound");
+        sound.currentTime = time;
+      }
+    </script>
+
+
+    <div id="card">
+      <!-- All you need to put beautiful, interactive 3D content on your site: -->
+      <!--  <model-viewer src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2Fpinguino%20GLB.glb?v=1589841261923" ios-src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2FPing%C3%BCino%20IOS.reality?v=1589841278950" alt="Un modelo 3D de un pingüino" background-color="#BFFCFF" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" autoplay="" ar="" magic-leap="" id="model-viewer" data-js-focus-visible="">
+      </model-viewer>-->
+      
+      <div align="center"><p align="center"> Pulsa el ícono </p> <img src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2Ficono1.png?v=1595350903061" width="16" height="16" align="center">
+      
+      <span> <h2> </h2> 
+            <span>
+      
+       <!-- LINK DEL GLB + LINK AUDIO + LINK AUDIO 2 + LINK PERSONAL -->
+         <model-viewer 
+                       src="https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2FSOLNUEVO9.2.gltf?v=1596181949961?sound=https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079;link=https://portalfisicaeducativa.usach.cl" 
+                       alt="A 3D model of a penguin" 
+                       background-color="#70BCD1" 
+                       shadow-intensity="1" 
+                       camera-controls="" 
+                       interaction-prompt="none" 
+                       auto-rotate="none" 
+                       autoplay="" 
+                       ar="" 
+                       magic-leap="none" 
+                       id="model-viewer" 
+                       data-js-focus-visible="">
+      </model-viewer>
+               
+              
+              
+      <section class="attribution">
+        <div>
+          <span> <h1>Pingüino emperador </h1> 
+            <span><h3 align="left"> Aptenodytes forsteri </h3> 
+              
+              
+             
+              
+              <span> 
+                
+                
+                
+                
+                <p align="justify"> Su largo es de 100-130 cm. Merino, pelágido, restringido a las aguas y a las masas de hielo antárticas. Raras veces lejos del hielo. Presencia improbable en Chile continental. Anida en invierno (desde marzo a diciembre) en el hielo sólido; muda entre diciembre y febrero. Se le conoce como el pingüino más grande, enorme y voluminoso.</p> </span>
+            <span><audio controls="" autoplay="" loop="" id="sound">
+                <source src="https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079" type="audio/mpeg">
+                <source src="https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079" type="audio/ogg"></audio></span>
+         </span>
+            
+            </span>
+        </div>
+
+      </section>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+      <script>
+        window.addEventListener("load", () => {
+          Sync("#model-viewer", "#sound");
+        });
+      </script>
+          
+      
+   <!--  </div>
+        <div id="timesteps">
+          <button onclick="jumpTo(0">Pose 1 </button>
+          <button onclick="jumpTo(5)">Pose 2</button>
+          <button onclick="jumpTo(10)">Pose 3 </button>
+          <button onclick="jumpTo(15)">Pose 4</button>
+          <button onclick="jumpTo(20)">Pose 5 </button>
+        </div>
+  
+   
+  -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@v0.8.0/dist/model-viewer.js"></script>
+    <script nomodule="" src="https://unpkg.com/@google/model-viewer@v0.8.0/dist/model-viewer-legacy.js"></script>
+ 
+  
+
+</body>
+
+
+ <!--  -->
