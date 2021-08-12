@@ -44,13 +44,143 @@
 
 
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <body>
+    <script>
+      function Sync(selector, audioSelector) {
+        var modelViewer = document.querySelector(selector);
+        var sound = document.querySelector(audioSelector);
+        var playRequest = document.querySelector("#overlay");
+
+        sound.addEventListener("timeupdate", () => {
+          modelViewer.currentTime = sound.currentTime;
+          console.log("modelViewer time: " + modelViewer.currentTime);
+        });
+
+        sound.addEventListener("pause", () => {
+          modelViewer.pause();
+        });
+
+        sound.addEventListener("play", () => {
+          modelViewer.play();
+
+          playRequest.classList.add("hide");
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState !== "visible") {
+            sound.pause();
+          }
+        });
+
+        var promise = sound.play();
+        if (promise !== undefined) {
+          promise
+            .then(_ => {
+              console.log("Autoplay has worked");
+              playRequest.classList.add("hide");
+            })
+            .catch(error => {
+              // Show a "Play" button so that user can start playback.
+              console.log("Autoplay has not worked");
+
+              // show the modal dialogue to play this
+              playRequest.classList.remove("hide");
+            });
+        }
+
+        // this is needed because modelViewer.currentTime does not update when paused
+        // https://github.com/google/model-viewer/issues/1113
+        function enforceTime() {
+          if (modelViewer === undefined)
+            modelViewer = document.querySelector(selector);
+
+          if (sound.paused) modelViewer.currentTime = sound.currentTime;
+
+          // need to enforce play
+          if (modelViewer.paused && typeof modelViewer.play === "function")
+            modelViewer.play();
+
+          requestAnimationFrame(enforceTime);
+        }
+
+        requestAnimationFrame(enforceTime);
+      }
+
+      function playNow() {
+        var playRequest = document.querySelector("#overlay");
+        playRequest.classList.add("hide");
+
+        var sound = document.querySelector("#sound");
+        sound.play();
+      }
+
+      function jumpTo(time) {
+        var sound = document.querySelector("#sound");
+        sound.currentTime = time;
+      }
+    </script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div class="examples-container">
     
     
     <div class="sample">
       <div id="webXR" class="demo">
 <model-viewer 
-              src="packages/modelviewer.dev/assets/ShopifyModels/Pluton1.glb" 
+              src="packages/modelviewer.dev/assets/ShopifyModels/Pluton1.glb?sound=https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079" 
               poster="packages/modelviewer.dev/assets/ShopifyModels/Pluton1.png" 
               shadow-intensity="1" 
               autoplay
@@ -243,7 +373,6 @@
       
       <div class="content">
         <div class="wrapper">
-  
           <div class="heading">
             <h1 class="demo-title"> 🌑 Plutón </h1>
             <h3>
@@ -254,6 +383,10 @@
               
  </h3>
           <br>
+            
+            <span><audio controls="" autoplay="" loop="" id="sound">
+                <source src="https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079" type="audio/mpeg">
+                <source src="https://cdn.glitch.com/533f3b5e-3a46-40c0-9b05-cd92105d313f%2F1.mp3?v=1596192926079" type="audio/ogg"></audio></span>
              
             
             
@@ -301,6 +434,24 @@ The following libraries and polyfills are recommended to maximize browser suppor
   
 
     
+  <script>
+        window.addEventListener("load", () => {
+          Sync("#model-viewer", "#sound");
+        });
+      </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
     
     
     
