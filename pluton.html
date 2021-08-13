@@ -4,7 +4,8 @@
   <meta name="description" content="Planeta enano Plutón">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    
+  <link type="text/css" href="/packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
+  <link type="text/css" href="/packages/modelviewer.dev/styles/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="demo-styles.css">
   <link rel="shortcut icon" type="image/png" href="/packages/modelviewer.dev/assets/favicon1.png">
     
@@ -111,7 +112,6 @@
      <model-viewer 
                        src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPluton1.glb?v=1628815921928?sound=https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n1.mp3?v=1628824191887" 
                        alt="Modelo 3D de Plutón" 
-                       background-color="white"
                        shadow-intensity="1" 
                        camera-controls="" 
                        interaction-prompt="none" 
@@ -119,6 +119,8 @@
                        ar="" 
                        magic-leap="none" 
                        id="model-viewer" 
+                       data-js-focus-visible="" 
+                       ar-status="not-presenting"
                        data-js-focus-visible="">
        
        
@@ -139,13 +141,29 @@
       </model-viewer>
   
   
-    model-viewer {
-    background-color: #fff;
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <style>
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  model-viewer {
+    background-color: #eee;
     overflow-x: hidden;
     --poster-color: #eee;
   }
-  
-  
+
   #ar-button {
     background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
     background-repeat: no-repeat;
@@ -178,6 +196,104 @@
   #ar-button:focus-visible {
     outline: 1px solid #4285f4;
   }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+</style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
