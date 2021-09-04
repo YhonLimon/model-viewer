@@ -1,124 +1,101 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-<script>
-  window.onload = function() {
-    AFRAME.registerComponent("videohandler", {
-      init: function() {
-        var marker = this.el;
 
-        this.vid = document.querySelector("#vid");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">	
+	
+	
+	
+	<html lang="en" class="js-focus-visible" data-js-focus-visible="" style="--scroll-top:65px;"><head>
+  <title>El Universo en una Pantágina</title> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Cometasa"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="/packages/modelviewer.dev/styles/estilos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/packages/modelviewer.dev/styles/video-js.css">
+  <script src="/packages/modelviewer.dev/styles/video.js"></script>
 
-        marker.addEventListener(
-          "markerFound",
-          function() {
-            this.vid.play();
-          }.bind(this)
-        );
+		
+		
+  <link rel="shortcut icon" type="/image/png" href="/packages/modelviewer.dev/assets/favicon1.png"> 
+	
+	
+	
+	
+	
+	<!-- <link href="https://vjs.zencdn.net/7.2/video-js.min.css" rel="stylesheet"> -->
+	<!-- <script src="https://vjs.zencdn.net/7.2/video.min.js"></script> -->
 
-        marker.addEventListener(
-          "markerLost",
-          function() {
-            this.vid.pause();
-            this.vid.currentTime = 0;
-          }.bind(this)
-        );
-      }
-    });
-  };
-</script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="estilos.css">
 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	<header>
+		<h1 class="titulo">Bajo un cielo de estrellas</h1>
+		<h3 class="titulo">Los cometas</h3>
+	</header>
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-  
-  
-    
-  
-</style>
+		
+		
+		
+		
+		
+		
+		
+		</head>
+<body>
+		
+		
+		
+		
+		
+	<main>
+		<div class="contenedor">
+			<video class="fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls id="fm-video">
+				<source src="https://cdn.glitch.com/b9d5b397-c2e3-41fc-9cd9-1f4f30a839fc%2FCometas%20Final%20Final.mp4?v=1599335988908" type="video/mp4">
+			</video>
+	
+			<article>
+				<h2 align="justify">¿Ves la llama?</h2>
+				<p align="justify">La parte azul es de mayor
+temperatura que la parte amarilla. Si
+queremos hervir el agua de la tetera más rápido, mejor
+usamos llamas azules como las de los quemadores de la 
+cocina.</p><br />
+	
+			
+			</article>
+		</div>
+	</main>
 
-<body style="margin : 0px; overflow: hidden;">
-  <div class="arjs-loader">
-    <div>Cargando video aumentado... </div>
-  </div>
-  
-  
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="antialias: true; alpha: true; precision: mediump;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-  >
-    <a-assets>
-      <video
-        src="https://cdn.glitch.com/b9d5b397-c2e3-41fc-9cd9-1f4f30a839fc%2FCometas%20Final%20Final.mp4?v=1599335988908"
-        preload="auto"
-        id="vid"
-        response-type="arraybuffer"
-        loop
-        crossorigin
-        webkit-playsinline
-        autoplay
-        
-        playsinline
-        
-                 ></video>
-    </a-assets>
-
-    <a-nft
-      videohandler
-      type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/UniversoPantagina/RA/master/recursos/dataNFT/Cometa14"
-      smooth="true"
-      smoothcount="10"
-      smoothtolerance="0.01"
-      smooththreshold="5"
-    >
-      
-      
-      <!-- Por defecto, los objetos 3D se posicionan en la esquina inferior izquierda -->
-      <!-- POSITION Si el teléfono está horizontal (x (horizontal y positivo a la derecha), z (profundidad y positivo saliente), y (vertical y positivo abajo)) -->
-      <!-- Si el teléfono está vertical () por definir -->
-      <a-video 
-               src="#vid"
-               rotation="270 0 0"
-               scale="0.4 0.4 0.4"
-               position="50 5 -140"
-               
-               width="300" 
-               height="175"
-               
-              
-               >
-      </a-video>
-      
-      
-      
-      <!-- Por defecto, los objetos 3D se posicionan en la esquina inferior izquierda -->
-      <!-- POSITION Si el teléfono está horizontal (x (horizontal y positivo a la derecha), z (profundidad y positivo saliente), y (vertical y positivo abajo)) -->
-      <!-- ROTATION Si el teléfono está horizontal (x (rota en torno al eje X), z (profundidad y positivo saliente), y (vertical y positivo abajo)) -->
-      <!-- Si el teléfono está vertical (x, y, z) -->
-       
-      
-      
-      
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+	<script>
+		var reproductor = videojs('fm-video', {
+			fluid: true
+		});
+	</script>
 </body>
+  
+  
+  
+  
+  
+  
+
+
+      
+<div class="copyright">J. Silva &amp; L. Huerta © Copyright 2021 
+<br>
+                                                                  
+
+                          El Universo en una Pantágina.</div>
+                         
+<br>
+
+  
+</html>
+	
+	
+	
