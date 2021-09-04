@@ -568,6 +568,18 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+    justify-content: center;
+}
+
 .services .icon-box {
   padding: 30px;
   position: relative;
@@ -580,12 +592,14 @@ section {
   text-align: center;
   border-bottom: 3px solid #fff;
   justify-content: center;
+  
 }
 
 .services .icon-box:hover {
   transform: translateY(-5px);
   border-color: #ef7f4d;
   justify-content: center;
+  
 }
 
 .services .icon i {
@@ -600,6 +614,7 @@ section {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
+  justify-content: center;
 }
 
 .services .title a {
@@ -610,6 +625,7 @@ section {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+  justify-content: center;
 }
 
 /*--------------------------------------------------------------
