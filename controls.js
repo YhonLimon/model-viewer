@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
       
-    var model = document.getElementById('boxer')
-    var tpose = document.getElementById('tpose')
-    var box1 = document.getElementById('box1')
-    var box2 = document.getElementById('box2')
+    var model = document.getElementById('robot')
+    var Idle = document.getElementById('Idle')
+    var Dance = document.getElementById('Dance')
+    var Death = document.getElementById('Death')
     var box3 = document.getElementById('box3')
 
-    tpose.addEventListener('click', () =>{
+    Idle.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'TPose')
-
-    })
-
-    box1.addEventListener('click', () =>{
-
-      model.setAttribute('animation-name', 'Box1')
+      model.setAttribute('animation-name', 'Idle')
 
     })
 
-    box2.addEventListener('click', () =>{
+    Dance.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'Box2')
+      model.setAttribute('animation-name', 'Dance')
+
+    })
+
+    Death.addEventListener('click', () =>{
+
+      model.setAttribute('animation-name', 'Death')
 
     })
 
