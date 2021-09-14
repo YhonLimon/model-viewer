@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
       
     var model = document.getElementById('robot')
-    var Idle = document.getElementById('Idle')
+    var Running = document.getElementById('Running')
     var Dance = document.getElementById('Dance')
     var Death = document.getElementById('Death')
     var box3 = document.getElementById('box3')
 
     Idle.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'Idle')
+      model.setAttribute('animation-name', 'Running')
 
     })
 
