@@ -253,7 +253,7 @@
   
   
      <model-viewer 
-                       src="/packages/shared-assets/models/26975038-fe86-40aa-bc0b-56445418ada4_multiboxer.glb" 
+                       src="/packages/shared-assets/models/RobotExpressive.glb" 
                        alt="Modelo 3D de un Boxeador" 
                        shadow-intensity="1" 
                        camera-controls="" 
@@ -261,10 +261,11 @@
                        autoplay="" 
                        ar="" 
                        magic-leap="none" 
-                       id="boxer" 
+                       id="robot" 
                        data-js-focus-visible="" 
                        ar-status="not-presenting"
-                       data-js-focus-visible="">
+                       data-js-focus-visible=""
+                       animation-name="Idle">
        
        
        
@@ -277,27 +278,37 @@
        
        
        <button 
-           id="tpose"
+           id="Dance"
            class="Hotspot" 
            slot="hotspot-1" 
-           data-position="-0.0642196592728704m 0.9564074141923486m 0.19589348917724303m" 
-           data-normal="-0.6692020925972081m -0.1091919048312056m 0.7350140727787807m" 
+           data-position="-0.051872685212626314m 3.975928495074014m 1.908257266379587m" 
+           data-normal="-0.25612804439341713m 0.24964635917101602m 0.9338496239908542m" 
            data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">¡Hola!</div>
+        <div class="HotspotAnnotation">Baila</div>
     </button>
        
               <button 
-           id="box1"
+           id="Idle"
            class="Hotspot" 
-           slot="hotspot-1" 
-           data-position="0.6977549184190277m 0.05911815288087907m -2.4008941127428245m" 
-           data-normal="0m 1m 2.220446049250313e-16m" 
+           slot="hotspot-3" 
+           data-position="-0.6327496241612208m 0.4779262530097428m 0.22137600866437362m" 
+           data-normal="-0.25612804439341713m 0.24964635917101602m 0.9338496239908542m" 
            data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Kidney shot</div>
+        <div class="HotspotAnnotation">Quieto</div>
     </button>
        
   
        
+       
+        <button 
+           id="Death"
+           class="Hotspot" 
+           slot="hotspot-8" 
+           data-position="0.18596210102776925m 2.015023183061179m 0.5078417704298377m" 
+           data-normal="-3.0534946175728854e-14m 0.061854431595500546m 0.9980851813808267m" 
+           data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Muerto</div>
+    </button>
        
        
        
