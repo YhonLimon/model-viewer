@@ -1,0 +1,636 @@
+<html lang="en" class="js-focus-visible" data-js-focus-visible="" style="--scroll-top:65px;"><head>
+  <title>Personaje de prueba</title> 
+  <meta charset="utf-8">
+  <meta name="description" content="Personaje de prueba">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <link type="text/css" href="/packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
+  <link type="text/css" href="/packages/modelviewer.dev/styles/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="demo-styles.css">
+  <link rel="shortcut icon" type="image/png" href="/packages/modelviewer.dev/assets/favicon1.png">
+   <script src="/controlscube.js"></script>
+ 
+
+
+<head>
+    <title>&lt;model-viewer&gt; example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer=""></script>
+  
+
+  </head>
+
+
+<body>
+  
+       
+    <script>
+      function Sync(selector, audioSelector) {
+        var modelViewer = document.querySelector(selector);
+        var sound = document.querySelector(audioSelector);
+        var playRequest = document.querySelector("#overlay");
+
+        sound.addEventListener("timeupdate", () => {
+          modelViewer.currentTime = sound.currentTime;
+          console.log("modelViewer time: " + modelViewer.currentTime);
+        });
+
+        sound.addEventListener("pause", () => {
+          modelViewer.pause();
+        });
+
+        sound.addEventListener("play", () => {
+          modelViewer.play();
+
+          playRequest.classList.add("hide");
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState !== "visible") {
+            sound.pause();
+          }
+        });
+
+        var promise = sound.play();
+        if (promise !== undefined) {
+          promise
+            .then(_ => {
+              console.log("Autoplay has worked");
+              playRequest.classList.add("hide");
+            })
+            .catch(error => {
+              // Show a "Play" button so that user can start playback.
+              console.log("Autoplay has not worked");
+
+              // show the modal dialogue to play this
+              playRequest.classList.remove("hide");
+            });
+        }
+
+        // this is needed because modelViewer.currentTime does not update when paused
+        // https://github.com/google/model-viewer/issues/1113
+        function enforceTime() {
+          if (modelViewer === undefined)
+            modelViewer = document.querySelector(selector);
+
+          if (sound.paused) modelViewer.currentTime = sound.currentTime;
+
+          // need to enforce play
+          if (modelViewer.paused && typeof modelViewer.play === "function")
+            modelViewer.play();
+
+          requestAnimationFrame(enforceTime);
+        }
+
+        requestAnimationFrame(enforceTime);
+      }
+
+      function playNow() {
+        var playRequest = document.querySelector("#overlay");
+        playRequest.classList.add("hide");
+
+        var sound = document.querySelector("#sound");
+        sound.play();
+      }
+
+      function jumpTo(time) {
+        var sound = document.querySelector("#sound");
+        sound.currentTime = time;
+      }
+    </script> 
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   <style> 
+ 
+  :not(:defined) > * {
+  display: none;
+}
+
+
+
+.Hotspot {
+  background: #fff;
+  border-radius: 32px;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 24px;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 24px;
+}
+
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.Hotspot:focus {
+  border: 4px solid rgb(0, 128, 200);
+  height: 32px;
+  outline: none;
+  width: 32px;
+}
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.HotspotAnnotation{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  left: calc(100% + 1em);
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+}
+
+.Hotspot:not([data-visible]) > * {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.update-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+  transition: width 0.3s;
+}
+
+ </style> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     <model-viewer 
+                       src="/packages/shared-assets/models/Cubo01.glb" 
+                       alt="Modelo 3D de un Boxeador" 
+                       shadow-intensity="1" 
+                       camera-controls="" 
+                       interaction-prompt="none" 
+                       autoplay="" 
+                       ar=""
+                       ar-scale="auto"
+                       magic-leap="none" 
+                       id="cube01" 
+                       data-js-focus-visible="" 
+                       ar-status="not-presenting"
+                       data-js-focus-visible=""
+                       animation-name="1">
+       
+       
+       
+       
+       
+       
+       
+  
+       
+       
+       
+       <button 
+           id="Dance"
+           class="Hotspot" 
+           slot="hotspot-1" 
+           data-position="-0.051872685212626314m 3.975928495074014m 1.908257266379587m" 
+           data-normal="-0.25612804439341713m 0.24964635917101602m 0.9338496239908542m" 
+           data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">1</div>
+    </button>
+       
+              <button 
+           id="Running"
+           class="Hotspot" 
+           slot="hotspot-3" 
+           data-position="-0.6327496241612208m 0.4779262530097428m 0.22137600866437362m" 
+           data-normal="-0.25612804439341713m 0.24964635917101602m 0.9338496239908542m" 
+           data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">2</div>
+    </button>
+       
+  
+       
+       
+        <button 
+           id="Death"
+           class="Hotspot" 
+           slot="hotspot-8" 
+           data-position="0.18596210102776925m 2.015023183061179m 0.5078417704298377m" 
+           data-normal="-3.0534946175728854e-14m 0.061854431595500546m 0.9980851813808267m" 
+           data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">3</div>
+    </button>
+       
+       
+       
+       <button slot="ar-button" id="ar-button">
+    Ver en Realidad Aumentada
+  </button>
+       
+       
+       
+       
+         <div id="ar-prompt">
+    <img src="/packages/modelviewer.dev/assets/hand.png">
+  </div>
+       <br>
+               <!-- NOTE: you must adjust the paths as appropriate for your project 
+<div align="center">
+                            <span align="left"><audio controls="" autoplay="" loop="" id="sound">
+                <source src="https://cdn.glitch.com/fefa73af-5a17-4309-92c9-34f3227fe38b%2FAudio1%2035s.mp3?v=1631588617578" type="audio/mpeg">
+                <source src="https://cdn.glitch.com/fefa73af-5a17-4309-92c9-34f3227fe38b%2FAudio1%2035s.mp3?v=1631588617578" type="audio/ogg"></audio></span>
+       </div>-->
+       
+       
+      </model-viewer>
+  
+  
+   
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <style>
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  model-viewer {
+    background-color: #eee;
+    overflow-x: hidden;
+    --poster-color: #eee;
+  }
+
+  #ar-button {
+    background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color:#4285f4;
+    height: 36;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
+  }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+</style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div id="card">
+      <!-- All you need to put beautiful, interactive 3D content on your site: -->
+      <!--  <model-viewer src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2Fpinguino%20GLB.glb?v=1589841261923" ios-src="https://cdn.glitch.com/634db0ee-0ba9-4b25-a608-2841a00f23c6%2FPing%C3%BCino%20IOS.reality?v=1589841278950" alt="Un modelo 3D de un pingüino" background-color="#BFFCFF" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" autoplay="" ar="" magic-leap="" id="model-viewer" data-js-focus-visible="">
+      </model-viewer>-->
+      
+      
+   
+      
+       <!-- LINK DEL GLB + LINK AUDIO + LINK AUDIO 2 + LINK PERSONAL -->
+    
+               
+              
+              
+      <section class="attribution">
+        <div>
+          <span> <h1> TEXTO DE PRUEBA </h1> 
+            <span><h2 align="left"> Texto de prueba </h2> 
+              
+              
+             
+                 <br>
+              
+              <!--     <div align="left">
+                            <span align="left"><audio controls="" autoplay="" loop="" id="sound">
+                <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/mpeg">
+                <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/ogg"></audio></span>
+         <div>-->
+               
+              <span> 
+                <br><h4 align="justify">Texto de prueba 
+                </h4> </span>
+              
+              <br>
+            
+             
+            
+            </span>
+        </div>
+
+      </section>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+      <script>
+        window.addEventListener("load", () => {
+          Sync("#model-viewer", "#sound");
+        });
+      </script>
+          
+      
+   <!--  </div>
+        <div id="timesteps">
+          <button onclick="jumpTo(0">Pose 1 </button>
+          <button onclick="jumpTo(5)">Pose 2</button>
+          <button onclick="jumpTo(10)">Pose 3 </button>
+          <button onclick="jumpTo(15)">Pose 4</button>
+          <button onclick="jumpTo(20)">Pose 5 </button>
+        </div>
+  
+   
+  -->
+  <script type="module"
+      src="https://unpkg.com/@google/model-viewer@v1.1.0/dist/model-viewer.js">
+  </script>
+
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule
+      src="https://unpkg.com/@google/model-viewer@v1.1.0/dist/model-viewer-legacy.js">
+  </script>
+ 
+  
+        <div style="margin-top:24px; margin-right:20px; text-aling=center;" class="footer">TEXTO &amp; DE ©  PRUEBA 
+                                                                       <br>
+                                                                       Texto de prueba  </div>
+                                                                       <div id="footer-links">
+      
+      
+
+</body>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+    
+
+
+        
+    <br>
+  
+  
+
+ <!--  -->
