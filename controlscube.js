@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
       
     var model = document.getElementById('cube01')
-    var 1 = document.getElementById('[Esconder acción]')
-    var 2 = document.getElementById('[Esconder acción].002')
-    var 3 = document.getElementById('[Esconder acción].001')
+    var uno = document.getElementById('uno')
+    var dos = document.getElementById('dos')
+    var tres = document.getElementById('tres')
     var box3 = document.getElementById('box3')
 
-    1.addEventListener('click', () =>{
+    uno.addEventListener('click', () =>{
 
       model.setAttribute('animation-name', '[Esconder acción]')
 
     })
 
-    2.addEventListener('click', () =>{
+    dos.addEventListener('click', () =>{
 
       model.setAttribute('animation-name', '[Esconder acción].002')
 
     })
 
-    3.addEventListener('click', () =>{
+    tres.addEventListener('click', () =>{
 
       model.setAttribute('animation-name', '[Esconder acción].001')
 
