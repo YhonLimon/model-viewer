@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     uno.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'Robot_Dance_RobotArmature.001')
+      model.setAttribute('animation-name', 'Robot_Idle_RobotArmature.001')
 
     })
 
     dos.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'Robot_Jump')
+      model.setAttribute('animation-name', 'Robot_WalkJump')
 
     })
 
@@ -26,8 +26,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     cuatro.addEventListener('click', () =>{
 
-      model.setAttribute('animation-name', 'Robot_Idle_RobotArmature.001')
+      model.setAttribute('animation-name', 'Robot_Dance_RobotArmature.001')
 
     })
         
 });
+
