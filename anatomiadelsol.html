@@ -183,121 +183,105 @@
   
   
   
-  <style>
-  /* This keeps child nodes hidden while the element loads */
+   <style> 
+ 
   :not(:defined) > * {
-    display: none;
-  }
+  display: none;
+}
 
-  model-viewer {
-    background-color: #eee;
-    overflow-x: hidden;
-    --poster-color: #eee;
-  }
 
-  #ar-button {
-    background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 12px 50%;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    bottom: 132px;
-    padding: 0px 16px 0px 40px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif;
-    font-size: 14px;
-    color:#4285f4;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 18px;
-    border: 1px solid #DADCE0;
-  }
 
-  #ar-button:active {
-    background-color: #E8EAED;
-  }
+.Hotspot {
+  background: #fff;
+  border-radius: 32px;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 24px;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 24px;
+}
 
-  #ar-button:focus {
-    outline: none;
-  }
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
 
-  #ar-button:focus-visible {
-    outline: 1px solid #4285f4;
-  }
+.Hotspot:focus {
+  border: 4px solid rgb(0, 128, 200);
+  height: 32px;
+  outline: none;
+  width: 32px;
+}
 
-  @keyframes circle {
-    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
-  }
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
 
-  @keyframes elongate {
-    from { transform: translateX(100px); }
-    to   { transform: translateX(-100px); }
-  }
+.HotspotAnnotation{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  left: calc(100% + 1em);
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+}
 
-  model-viewer > #ar-prompt {
-    position: absolute;
-    left: 50%;
-    bottom: 175px;
-    animation: elongate 2s infinite ease-in-out alternate;
-    display: none;
-  }
+.Hotspot:not([data-visible]) > * {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition: transform 0.3s, opacity 0.3s;
+}
 
-  model-viewer[ar-status="session-started"] > #ar-prompt {
-    display: block;
-  }
 
-  model-viewer > #ar-prompt > img {
-    animation: circle 4s linear infinite;
-  }
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  .slider {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 16px;
-  }
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
 
-  .slides {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
+.update-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+  transition: width 0.3s;
+}
 
-  .slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-  }
-
-  .slide.selected {
-    border: 2px solid #4285f4;
-  }
-
-  .slide:focus {
-    outline: none;
-  }
-
-  .slide:focus-visible {
-    outline: 1px solid #4285f4;
-  }
-
-</style>
+ </style> 
   
   
   
