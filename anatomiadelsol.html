@@ -1,19 +1,19 @@
 <html lang="en" class="js-focus-visible" data-js-focus-visible="" style="--scroll-top:65px;"><head>
-  <title>El Universo en una Pantágina</title> 
+  <title>Personaje de prueba</title> 
   <meta charset="utf-8">
-  <meta name="description" content="Anatomía del Sol">
+  <meta name="description" content="Personaje de prueba">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     
   <link type="text/css" href="/packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
   <link type="text/css" href="/packages/modelviewer.dev/styles/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="demo-styles.css">
   <link rel="shortcut icon" type="image/png" href="/packages/modelviewer.dev/assets/favicon1.png">
-    
+   <script src="/controls.js"></script>
  
 
 
 <head>
-    <title>&lt;model-viewer&gt; ¿Te imaginas el Sol por dentro?</title>
+    <title>&lt;model-viewer&gt; example</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,12 +32,10 @@
 
   </head>
 
-  <!--  -->
-  <!--  -->
-  <!--  -->
-  <!--  -->
 
 <body>
+  
+       
     <script>
       function Sync(selector, audioSelector) {
         var modelViewer = document.querySelector(selector);
@@ -111,7 +109,8 @@
         var sound = document.querySelector("#sound");
         sound.currentTime = time;
       }
-    </script>
+    </script> 
+
 
   
   
@@ -121,7 +120,16 @@
   
   
   
-  <style> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   <style> 
  
   :not(:defined) > * {
   display: none;
@@ -229,45 +237,62 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
      <model-viewer 
-                       src="/packages/shared-assets/models/RobotExpressive.glb?v=1638570915938?sound=https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" 
-                       ios-src="/packages/shared-assets/models/RobotExpressive.glb"
-                       alt="Modelo 3D de la Anatomía del Sol" 
+                       src="/packages/shared-assets/models/Sol1.glb" 
+                       alt="Modelo 3D del Sol" 
                        shadow-intensity="1" 
                        camera-controls="" 
-                       interaction-prompt="none" <
+                       interaction-prompt="none" 
                        autoplay="" 
-                       ar="" 
+                       ar=""
+                       ar-scale="auto"
                        magic-leap="none" 
-                       id="model-viewer" 
+                       id="robot" 
                        data-js-focus-visible="" 
                        ar-status="not-presenting"
-                       data-js-focus-visible="">
+                       data-js-focus-visible=""
+                       animation-name="">
        
        
        
        
        
        
-           <button class="Hotspot" slot="hotspot-1" data-position="-0.022832738445491912m -0.0348326792173509m 0.09544408784438627m" data-normal="-0.7211943545220276m 0.20214926715405568m 0.6625816001026849m" data-visibility-attribute="visible">
+       
+  
+       
+       
+       
+      <button class="Hotspot" slot="hotspot-1" data-position="-0.022832738445491912m -0.0348326792173509m 0.09544408784438627m" data-normal="-0.7211943545220276m 0.20214926715405568m 0.6625816001026849m" data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Núcleo
         </div>
     </button><button class="Hotspot" slot="hotspot-5" data-position="0.8924412720898491m 0.26519910033652244m -0.11584842053549707m" data-normal="0.8711060675023793m 0.48414765584338204m 0.08231200703359473m" data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Corona</div>
     </button><button class="Hotspot" slot="hotspot-6" data-position="0.07778895231095799m -0.3026669839441407m 0.05024388101531284m" data-normal="-0.9999999999999712m 2.980233748672778e-8m 2.384185728843087e-7m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Z. Radiativa</div>
+        <div class="HotspotAnnotation">Radiación</div>
     </button><button class="Hotspot" slot="hotspot-12" data-position="0.07778899853122512m -0.5606336374289431m 0.2763515874772536m" data-normal="-0.9999999999999712m 2.980233748672778e-8m 2.384185728843087e-7m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Z. Convectiva</div>
+        <div class="HotspotAnnotation">Convección</div>
     </button><button class="Hotspot" slot="hotspot-13" data-position="0.23489124037609263m 0.10528335059008434m 0.6134329587230452m" data-normal="0.23975955398901277m 0.2395770403334964m 0.9408072055506549m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Mancha</div>
+        <div class="HotspotAnnotation">Mancha </div>
     </button><button class="Hotspot" slot="hotspot-16" data-position="0.2836308690262264m -0.042612254976266334m -0.6001789661742616m" data-normal="0.6738782927324208m 0.05596427951231712m -0.7367197879809563m" data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Cromósfera</div>
-    </button>
+
        
-         <!-- 
-<button class="Hotspot" slot="hotspot-17" data-position="-0.04599451315739653m 0.001544735011521775m -0.6980662748627068m" data-normal="-0.1521903510962197m 0.46693465483737756m -0.8710970813549479m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Fulguración</div>
-    </button> -->
        
        
        
@@ -283,25 +308,22 @@
        
          <div id="ar-prompt">
     <img src="/packages/modelviewer.dev/assets/hand.png">
-  
   </div>
+       <br>
+               <!-- NOTE: you must adjust the paths as appropriate for your project 
+<div align="center">
+                            <span align="left"><audio controls="" autoplay="" loop="" id="sound">
+                <source src="https://cdn.glitch.com/fefa73af-5a17-4309-92c9-34f3227fe38b%2FAudio1%2035s.mp3?v=1631588617578" type="audio/mpeg">
+                <source src="https://cdn.glitch.com/fefa73af-5a17-4309-92c9-34f3227fe38b%2FAudio1%2035s.mp3?v=1631588617578" type="audio/ogg"></audio></span>
+       </div>-->
        
-  
-  <br>
-           
-  
-  
-  
-
        
-       
-  
-  
       </model-viewer>
   
   
    
   
+
   
   
   
@@ -311,6 +333,128 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  <style>
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  model-viewer {
+    background-color: #eee;
+    overflow-x: hidden;
+    --poster-color: #eee;
+  }
+
+  #ar-button {
+    background-image: url(/packages/modelviewer.dev/assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color:#4285f4;
+    height: 36;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
+  }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+</style>
   
   
   
@@ -383,8 +527,8 @@
               
       <section class="attribution">
         <div>
-          <span> <h1>🌞 Anatomía del Sol </h1> 
-            <span><h2 align="left"> ¿Te imaginas el Sol por dentro? </h2> 
+          <span> <h1> TEXTO DE PRUEBA </h1> 
+            <span><h2 align="left"> Texto de prueba </h2> 
               
               
              
@@ -395,9 +539,9 @@
                 <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/mpeg">
                 <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/ogg"></audio></span>
          <div>-->
-             
+               
               <span> 
-                <h4 align="justify">El Sol: . 
+                <br><h4 align="justify">Texto de prueba 
                 </h4> </span>
               
               <br>
@@ -446,9 +590,9 @@
   </script>
  
   
-        <div style="margin-top:24px; margin-right:20px; text-aling=center;" class="footer">J. Silva &amp; L. Huerta © Copyright 2021 
+        <div style="margin-top:24px; margin-right:20px; text-aling=center;" class="footer">TEXTO &amp; DE ©  PRUEBA 
                                                                        <br>
-                                                                       El Universo en una Pantágina.  </div>
+                                                                       Texto de prueba  </div>
                                                                        <div id="footer-links">
       
       
