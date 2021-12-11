@@ -333,7 +333,7 @@
                        ar=""
                        ar-scale="auto"
                        magic-leap="none" 
-                       id="robot" 
+                       id="modelblock" 
                        data-js-focus-visible="" 
                        ar-status="not-presenting"
                        data-js-focus-visible=""
@@ -654,7 +654,25 @@ La atmósfera exterior del Sol se llama corona, y curiosamente esta zona se encu
               
               
               
-              
+              <script>
+    function selected(){
+            // Add active class to the current button (highlight it)
+var header = document.getElementById("modelblock");
+var hotspots = header.getElementsByClassName("hotspot");
+for (var i = 0; i < hotspots.length; i++) {
+  hotspots[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("selected");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" selected", "");
+  }
+  this.className += " selected";
+  });
+}
+
+    }
+
+
+    </script>
               
               
               
