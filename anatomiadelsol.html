@@ -7,6 +7,8 @@
   <link type="text/css" href="/packages/modelviewer.dev/styles/examples.css" rel="stylesheet">
   <link type="text/css" href="/packages/modelviewer.dev/styles/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="demo-styles.css">
+  <link rel="stylesheet" href="audio.css">
+  <script  src="audio.js"></script>
   
   <link rel="shortcut icon" type="image/png" href="/packages/modelviewer.dev/assets/favicon1.png">
    <script src="/controls.js"></script>
@@ -400,9 +402,22 @@
   }
 
 
+/* hotspot musical */
+  .musica{
+  background: #fff;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 0px;
+  padding: 0px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 0px;
+  }
 
-
-     
+   
      
      
      
@@ -535,6 +550,43 @@
     </button>
        
        
+       
+       
+       
+  <button class="musica"  
+          id="hotspot-5" 
+          slot="hotspot-5"  
+          data-position="0.022832738445491912m 0.7148326792173509m -0.00544408784438627m"  
+          data-normal="-0.7211943545220276m 0.20214926715405568m 0.6625816001026849m" 
+          >
+    
+
+
+    <iframe 
+            src="https://audio-solo.glitch.me/"   
+            style="overflow:scroll"   
+            marginheight="1" 
+            marginwidth="1" 
+            name="cboxmain" 
+            id="cboxmain" 
+            seamless="seamless" 
+            scrolling="no" 
+            frameborder="0" 
+            allowtransparency="true"              
+            width="70rem" 
+            height="70rem" 
+            frameborder="0" 
+            allowfullscreen="allowfullscreen" 
+            allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" 
+            title="Drag and Drop">
+    </iframe>
+    <script 
+            scrollbar-visibility="hidden" 
+            verflow="hidden" 
+            src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" 
+            charset="UTF-8"></script>
+    
+        </div></button>
        
        
        
