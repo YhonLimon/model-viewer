@@ -129,12 +129,7 @@
   
   
   
-  <!-- Hotspot v1 -->
-   <!--
-  :not(:defined) > * {
-  display: none;
-}
-
+  <!-- Hotspot v1 
 
 
 .Hotspot {
@@ -160,6 +155,24 @@
   width: 20px;
 }
 
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+
+
+-->
+   <!--
+  :not(:defined) > * {
+  display: none;
+}
+
+
+
+
+
 .Hotspot:focus {
   border: 4px solid rgb(181, 52, 34);
   height: 20px;
@@ -167,10 +180,6 @@
   width: 20px;
 }
 
-.Hotspot > * {
-  opacity: 1;
-  transform: translateY(-50%);
-}
 
 .HotspotAnnotation{
   background: #fff;
@@ -195,18 +204,7 @@
   pointer-events: none;
   transform: translateY(calc(-50% + 4px));
   transition: transform 0.3s, opacity 0.3s;
-}-->
-  
-  
-  
-   <style> 
-
-     
-  :not(:defined) > * {
-  display: none;
 }
-
-
 
 .Hotspot {
   background: #fff;
@@ -222,6 +220,15 @@
   width: 12px;
 }
 
+
+
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+
 .Hotspot:not([data-visible]) {
   background: transparent;
   border: 4px solid #fff;
@@ -231,6 +238,22 @@
   width: 20px;
 }
 
+-->
+  
+  
+  
+   <style> 
+
+     
+  :not(:defined) > * {
+  display: none;
+}
+
+
+
+
+
+
 .Hotspot:focus {
   border: 4px solid rgb(181, 52, 34);
   height: 20px;
@@ -238,10 +261,6 @@
   width: 20px;
 }
 
-.Hotspot > * {
-  opacity: 1;
-  transform: translateY(-50%);
-}
 
 .HotspotAnnotation{
   background: #fff;
