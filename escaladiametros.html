@@ -35,81 +35,7 @@
 
 <body>
   
-  
-    <script>
-      function Sync(selector, audioSelector) {
-        var modelViewer = document.querySelector(selector);
-        var sound = document.querySelector(audioSelector);
-        var playRequest = document.querySelector("#overlay");
 
-        sound.addEventListener("timeupdate", () => {
-          modelViewer.currentTime = sound.currentTime;
-          console.log("modelViewer time: " + modelViewer.currentTime);
-        });
-
-        sound.addEventListener("pause", () => {
-          modelViewer.pause();
-        });
-
-        sound.addEventListener("play", () => {
-          modelViewer.play();
-
-          playRequest.classList.add("hide");
-        });
-
-        document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState !== "visible") {
-            sound.pause();
-          }
-        });
-
-        var promise = sound.play();
-        if (promise !== undefined) {
-          promise
-            .then(_ => {
-              console.log("Autoplay has worked");
-              playRequest.classList.add("hide");
-            })
-            .catch(error => {
-              // Show a "Play" button so that user can start playback.
-              console.log("Autoplay has not worked");
-
-              // show the modal dialogue to play this
-              playRequest.classList.remove("hide");
-            });
-        }
-
-        // this is needed because modelViewer.currentTime does not update when paused
-        // https://github.com/google/model-viewer/issues/1113
-        function enforceTime() {
-          if (modelViewer === undefined)
-            modelViewer = document.querySelector(selector);
-
-          if (sound.paused) modelViewer.currentTime = sound.currentTime;
-
-          // need to enforce play
-          if (modelViewer.paused && typeof modelViewer.play === "function")
-            modelViewer.play();
-
-          requestAnimationFrame(enforceTime);
-        }
-
-        requestAnimationFrame(enforceTime);
-      }
-
-      function playNow() {
-        var playRequest = document.querySelector("#overlay");
-        playRequest.classList.add("hide");
-
-        var sound = document.querySelector("#sound");
-        sound.play();
-      }
-
-      function jumpTo(time) {
-        var sound = document.querySelector("#sound");
-        sound.currentTime = time;
-      }
-    </script>
 
      <model-viewer 
                        src="packages/modelviewer.dev/assets/ShopifyModels/Tamaños3.glb" 
@@ -140,15 +66,7 @@
        <br>
        
        
-       <!--   
-       
-       <div align="center">
-                            <span align="left"><audio controls="" autoplay="" loop="" id="sound">
-                <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/mpeg">
-                <source src="https://cdn.glitch.com/d5dff6f0-1fb0-4ba4-b949-a3380d010003%2FPlut%C3%B3n2.mp3?v=1628890955056" type="audio/ogg"></audio></span>
-       </div> 
 
-        -->
        
        
       </model-viewer>
@@ -379,7 +297,7 @@
       </section>
 
               
-              
+       
               
               
               
