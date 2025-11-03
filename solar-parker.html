@@ -117,36 +117,56 @@
 
   
   
-  
-  
-  
-  
-  
-  
-  
-  
 
-  
-  
-  
-  <!-- Hotspot v1 -->
-  
-  <!--
+
+
+
+
+
+
+
+ <style> 
+ 
   :not(:defined) > * {
   display: none;
 }
 
 
 
-
-
-.Hotspot:focus {
-  border: 4px solid rgb(181, 52, 34);
-  height: 20px;
-  outline: none;
-  width: 20px;
+.Hotspot {
+  background: #fff;
+  border-radius: 32px;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 12px;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 12px;
 }
 
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.Hotspot:focus {
+  border: 4px solid rgb(0, 128, 200);
+  height: 32px;
+  outline: none;
+  width: 32px;
+}
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
 
 .HotspotAnnotation{
   background: #fff;
@@ -173,188 +193,7 @@
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.Hotspot {
-  background: #fff;
-  border-radius: 32px;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 12px;
-  padding: 6px;
-  position: relative;
-  transition: opacity 0.3s;
-  width: 12px;
-}
 
-
-
-
-.Hotspot > * {
-  opacity: 1;
-  transform: translateY(-50%);
-}
-
-
-.Hotspot:not([data-visible]) {
-  background: transparent;
-  border: 4px solid #fff;
-  box-shadow: none;
-  height: 20px;
-  pointer-events: none;
-  width: 20px;
-}
-
--->
-  
-  
-  
-   <style> 
-
-          
-<!-- Hotspot v2  -->
-
-     
-    .Hotspot{
-  background: #fff;
-  border-radius: 32px;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 12px;
-  padding: 8px;
-  position: relative;
-  transition: opacity 0.3s;
-  width: 12px;
-  }
-     
-     
-     
-  .hotspot{
-  background: #fff;
-  border-radius: 32px;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 12px;
-  padding: 8px;
-  position: relative;
-  transition: opacity 0.3s;
-  width: 12px;
-  }
-
-  .annotation{
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  color: rgba(0, 0, 0, 0.8);
-  display: block;
-  font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  left: calc(40% + 1em);
-  overflow-wrap: break-word;
-  padding: 0.5em 1em;
-  position: absolute;
-  top: 120%;
-  width: max-content;
-  }
-
-  .hotspot.selected{
-    background-color: #FE9715;
-  }
-
-  .hotspot:not(.selected) > .annotation{
-    display: none;
-  }
-    
-     
-     
-     
-  /* hotspot no econdidos */
-  .puntos{
- background: #fff;
-  border-radius: 32px;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 12px;
-  padding: 8px;
-  position: relative;
-  transition: opacity 0.3s;
-  width: 12px;
-  }
-
-  .anotaciones{
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  color: rgba(0, 0, 0, 0.8);
-  display: block;
-  font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  font-weight: 700;  
-  max-width: 300px;
-  overflow-wrap: break-word;
-  padding: 0.5em 1em;
-  position: absolute;
-  top: -50px;
-  left: -30px;
-  width: max-content;
-  }
-
-
-/* hotspot musical */
-  .musica{
-  background: #fff;
-  border-radius: 0;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-  height: 0px;
-  padding: 0px;
-  position: relative;
-  transition: opacity 0.3s;
-  width: 0px;
-  }
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-  :not(:defined) > * {
-  display: none;
-}
-
-
-
-
-
-
-.hotspot:focus {
-  border: 4px solid rgb(181, 52, 34);
-  height: 20px;
-  outline: none;
-  width: 20px;
-}
-
-
-     
-     
-     
-     
 .progress-bar {
   display: block;
   width: 33%;
@@ -383,31 +222,32 @@
   float: left;
   transition: width 0.3s;
 }
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-
-
-   
-     
-     
-     
-     
-     
-     
-     
 
  </style> 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
   
   
   
@@ -453,7 +293,7 @@
 
 
 <button 
-              class="hotspot" 
+              class="Hotspot" 
               slot="hotspot-1" 
               data-position="0.12028578907180076m -0.0783910143212232m -1.4802785813808441m"
               data-normal="0m 0m -1m"
@@ -466,7 +306,7 @@
        
        
        <button 
-               class="hotspot" 
+               class="Hotspot" 
                slot="hotspot-2" 
                data-position="-1.9769123391053123m -0.07452106553878224m -0.00017885766250458346m" 
                data-normal="0.000009041836885984808m 0m -0.9999999999591226m"  
@@ -478,7 +318,7 @@
        
        
 <button 
-               class="hotspot" 
+               class="Hotspot" 
                slot="hotspot-3" 
                data-position="-0.35936356875896536m -0.8082825208000601m 0.44306658001334687m" 
                data-normal="-0.205125144252086m -0.840218059350145m 0.5019534718850316m"
@@ -490,7 +330,7 @@
        
        
        
-    <button   class="hotspot" 
+    <button   class="Hotspot" 
                   slot="hotspot-4" 
                   data-position="-0.03245522081851959m -0.013566480817129217m 3.4455358862149854m"
                   data-normal="-1m 0m 0m"
@@ -498,7 +338,7 @@
         <div class="annotation">Sensores del viento solar</div>
     </button>
 
-    <button   class="hotspot" 
+    <button   class="Hotspot" 
                   slot="hotspot-5" 
                   data-position="0.19430481915742703m 0.8739173578778576m 0.2501542240884649m"
                   data-normal="0.18489818481084747m 0.973795317717625m 0.13242107251069857m"
@@ -506,7 +346,7 @@
         <div class="annotation">Cámara WISP</div>
     </button>
 
-    <button   class="hotspot" 
+    <button   class="Hotspot" 
                   slot="hotspot-6" 
                   data-position="-1.6250261753026969m 1.9343723447614547m -1.2488979652810448m"
                   data-normal="-0.6317256392873832m -0.530193550237264m 0.5655241073144033m"
